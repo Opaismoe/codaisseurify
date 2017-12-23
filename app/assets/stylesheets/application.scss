@@ -2,3 +2,17 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+
+.jumbotron {
+  color: white;
+  background-color: rgb(40, 40, 40);
+}
+
+.navbar-header > .navbar-brand {
+    color: #2eb85b;
+}
+
+.navbar-brand > a:hover {
+    color: #54df81;
+}
