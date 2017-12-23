@@ -31,7 +31,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootstrap-sass', '~> 3.3.6'
 # Use jQuery for easier javascript
 gem 'jquery-rails', '~> 4.3.1'
-# Use Carrierwave for easy image upload
+# Use Carrierwave for image upload
 gem 'carrierwave', '0.11.2'
 # Use Cloudinary for hosting images
 gem 'cloudinary', '1.2.3'
