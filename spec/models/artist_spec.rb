@@ -30,7 +30,7 @@ RSpec.describe Artist, type: :model do
 
   describe "Association with songs" do
     let!(:artist) { create :artist }
-    let!(:song) { create :song, user: artist}
+    let!(:song) { create :song, artist: artist}
 
     it "Artist has an song" do
       expect(artist.songs).to include(song)
