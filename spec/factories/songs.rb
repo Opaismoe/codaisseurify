@@ -1,5 +1,5 @@
 FactoryBot.define do
   factory :song do
-    name "MyString"
+    name      { Faker::HitchhikersGuideToTheGalaxy.marvin_quote }
   end
 end
