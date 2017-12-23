@@ -1,11 +1,20 @@
 <hr class="featurette-divider">
 <div class="jumbotron">
+
+  <% @artist.photos.each do |photo| %>
+    <div class="img-show">
+      <img class="img-circle" src="<%=photo.image.thumbnail_show%>" alt="Generic placeholder image" width="300" height="300">
+    </div>
+  <% end %>
+
   <h1 class="display-3"><%= @artist.name %></h1>
   <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+
   <hr class="featurette-divider">
     <ul class="list-group">
       <% @songs.each do |song| %>
         <li class="list-group-item"><%= song.name %></li>
       <% end %>
+
     </ul>
 </div>

@@ -103,6 +103,17 @@ body {
   margin-left: 10px;
 }
 
+.img-show {
+  margin: auto;
+  position: relative;
+  width: 300px;
+}
+
+.img-circle {
+  border: solid 1px rgba(#dbebe0, 1);
+  box-shadow: 1px 1px 10px rgba(1, 19, 6, 0.88);
+}
+
 
 /* Featurettes
 ------------------------- */

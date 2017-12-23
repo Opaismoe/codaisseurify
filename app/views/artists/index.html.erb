@@ -6,7 +6,6 @@
         <div class="carousel-caption">
           <h1>Chet Baker.</h1>
           <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-          <p><a class="btn btn-lg btn-success" href="#" role="button">Sign up today</a></p>
         </div>
       </div>
     </div>
@@ -16,7 +15,6 @@
         <div class="carousel-caption">
           <h1>The Beatles</h1>
           <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-          <p><a class="btn btn-lg btn-success" href="#" role="button">Learn more</a></p>
         </div>
       </div>
     </div>
@@ -26,7 +24,6 @@
         <div class="carousel-caption">
           <h1>Thundercat</h1>
           <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-          <p><a class="btn btn-lg btn-success" href="#" role="button">Browse gallery</a></p>
         </div>
       </div>
     </div>
@@ -48,7 +45,9 @@
   <div class="row">
   <% @artists.each do |artist| %>
     <div class="col-lg-4">
-      <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
+      <% artist.photos.each do |photo| %>
+        <img class="img-circle" src="<%=photo.image.thumbnail%>" alt="Generic placeholder image" width="240" height="240">
+      <% end %>
       <h2><%= artist.name %></h2>
       <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
       <p><%= link_to "View more", artist, class: "btn btn-success" %></p>
