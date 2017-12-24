@@ -13,9 +13,9 @@
   <hr class="featurette-divider">
     <ul class="list-group">
       <% @songs.each do |song| %>
-        <li class="list-group-item"><%= song.name %><%= button_to "delete", :method => :destroy, :id => song.id %></li>
+        <li class="list-group-item"><%= song.name %><%= link_to "delete", song, :method => :delete %></li>
       <% end %>
-      <%= button_to "[Delete]", artist_path(@artist), method: :delete, data: { confirm: "Are you sure?" } %>
+      <%= link_to 'Delete', artist_path, method: :delete, data: { confirm: 'Are you sure?' } %>
 
     </ul>
 </div>
