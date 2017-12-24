@@ -1,5 +1,6 @@
 class ArtistsController < ApplicationController
 
+
   def index
     @artists = Artist.all
   end
@@ -9,21 +10,19 @@ class ArtistsController < ApplicationController
     @songs = @artist.songs
   end
 
-  def new
-  end
-
   def destroy
-    @song = Song.find(params[:id])
-    @song.destroy
-    redirect_to artists_path
+    @artist = Artist.find(params[:id])
+    @artist.destroy
+    redirect_to root_path, notice: "Delete success"
   end
 
   private
 
-  def artwork_params
-    params
-      .require(:artist)
-  end
+  # def set_artist
+  #   @artist = Artist.find(params[:id])
+  # end
+
+
 
 
 end
