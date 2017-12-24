@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  root to: "pages#home"
+  root to: "artists#index"
 
-  resources :artist do
+  resources :artists do
     resources :songs
   end
 end
