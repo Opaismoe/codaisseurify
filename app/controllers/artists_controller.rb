@@ -18,12 +18,5 @@ class ArtistsController < ApplicationController
     redirect_to artists_path
   end
 
-  private
-
-  def artwork_params
-    params
-      .require(:artist)
-  end
-
 
 end
