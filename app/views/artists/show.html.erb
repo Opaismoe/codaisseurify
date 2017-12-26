@@ -14,7 +14,7 @@
       <% @artist.songs.each do |song| %>
         <li class="list-group-item"><%= song.name %>
           <br>
-          <%= link_to "delete song", artist_song_path(:artist_id, song), :method => :delete %></li>
+          <%= link_to "delete song", artist_song_path(:artist_id, song),notice: "Song deleted", :method => :delete %></li>
       <% end %>
       <hr>
       <%= render 'form' %>

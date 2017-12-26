@@ -10,16 +10,16 @@ RSpec.describe Song, type: :model do
   end
 
   describe "Check validations" do
-    let!(:song) {create :song, name: nil, album: nil}
+    song = Song.new(name: nil, artist: nil)
 
     it "is invalid without a name" do
       song.valid?
       expect(song.errors).to have_key(:name)
     end
 
-    it "is invalid without a album" do
+    it "is invalid without a artist" do
       song.valid?
-      expect(song.errors).to have_key(:album)
+      expect(song.errors).to have_key(:artist)
     end
   end
 end
