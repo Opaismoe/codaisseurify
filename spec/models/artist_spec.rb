@@ -15,22 +15,21 @@ RSpec.describe Artist, type: :model do
   end
 
   describe "Check validations" do
-    let!(:artist) {create :artist, name: nil, genre: nil}
+    song = Song.new(name: nil, artist: nil)
 
-    it "is invalid without a name" do
-      artist.valid?
-      expect(artist.errors).to have_key(:name)
+    it "Song is invalid without a name" do
+      song.valid?
+      expect(song.errors).to have_key(:name)
     end
-
-    it "is invalid without a genre" do
-      artist.valid?
-      expect(artist.errors).to have_key(:genre)
+    it "Song is invalid without a artist" do
+      song.valid?
+      expect(song.errors).to have_key(:artist)
     end
   end
 
   describe "Association with songs" do
-    let!(:artist) { create :artist }
-    let!(:song) { create :song, artist: artist}
+    let!(:artist)   { create :artist }
+    let!(:song)     { create :song, artist: artist}
 
     it "Artist has an song" do
       expect(artist.songs).to include(song)
