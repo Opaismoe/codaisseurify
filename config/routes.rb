@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   root to: "artists#index"
 
-  resources :artists 
-  resources :songs
+  resources :artists, only: [:show, :index, :destroy] do
+    resources :songs, only: [:create, :destroy]
+  end
 
 end
