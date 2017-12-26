@@ -21,6 +21,4 @@ before_action :set_artist, only: [:show]
   def set_artist
     @artist = Artist.find(params[:id])
   end
-
-
 end
