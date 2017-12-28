@@ -9,34 +9,20 @@
   <% end %>
 
   <h1 class="display-3"><%= @artist.name %></h1>
+  <h4 id="artist-id" data-id="<%= @artist.id %>"</h4>
   <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
     <ul class="list-group">
-      <!-- <% @artist.songs.each do |song| %>
-        <li class="list-group-item"><%= song.name %>
-          <br>
-          <%= link_to "delete song", artist_song_path(:artist_id, song),notice: "Song deleted", :method => :delete %></li>
-      <% end %>
-      <div class="row">
-        <div class="col-md-6 col-md-offset-3">
-          <h1 class="page-header">Songs</h1>
-
-          <% if notice.present? %>
-            <div class="alert alert-info" role="alert">
-              <%= notice %>
-            </div>
-          <% end %>
 
 
-          <hr> -->
-
-          <table class="table table-striped" id="songList">
+          <table class="table" id="songList">
             <%= render @songs %>
           </table>
-          <%= render "form", song: @form %>
+          <%= render "form", song: @songs %>
         </div>
       </div>
       <hr>
       <hr>
+      <a href="#" id="clean-up">Clean up</a>
       <%= link_to 'Delete artist', artist_path, class: "btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %>
     </ul>
 </div>
