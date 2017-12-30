@@ -37,6 +37,8 @@ gem 'carrierwave', '0.11.2'
 # Use Cloudinary for hosting images
 gem 'cloudinary', '1.2.3'
 
+gem 'factory_bot_rails'
+gem 'faker'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -46,8 +48,6 @@ group :development, :test do
   # Rspec rails, for testing
   gem 'rspec-rails', '~> 3.5', '>= 3.5.2'
   # FactoryBot, Faker for testing
-  gem 'factory_bot_rails'
-  gem 'faker'
 end
 
 group :development do
