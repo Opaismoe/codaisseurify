@@ -1,8 +1,9 @@
 class ArtistsController < ApplicationController
-before_action :set_artist, only: [:show]
+before_action :set_artist, only: [:show, :create, :new]
 
   def index
     @artists = Artist.all
+    @songs = Song.all
   end
 
   def show
@@ -11,9 +12,6 @@ before_action :set_artist, only: [:show]
   end
 
   def destroy
-    @artist = Artist.find(params[:id])
-    @artist.destroy
-    redirect_to root_path, notice: "Delete success"
   end
 
   private

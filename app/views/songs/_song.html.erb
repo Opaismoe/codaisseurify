@@ -1,0 +1,6 @@
+<li id="song-list" class="song" data-id="<%= song.id %>">
+  <tr>
+    <label data-id="<%= song.id %>", class="list-group"><%= song.name %>
+      <%= link_to "Delete song", artist_song_url(@artist, song), class: "destroy-song", remote: true %></label>
+  </tr>
+</li>

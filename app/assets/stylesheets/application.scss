@@ -2,6 +2,7 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "https://goo.gl/DcDN1G";
 
 
 .jumbotron {
@@ -192,4 +193,8 @@ body {
 
 .list-group-item {
   color: black;
+}
+
+li {
+  list-style: none;
 }
