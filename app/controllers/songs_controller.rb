@@ -1,5 +1,7 @@
 class SongsController < ApplicationController
  skip_before_action :verify_authenticity_token
+ before_action :set_song, only: :destroy
+
 
   def index
     @songs = Song.all
@@ -8,6 +10,7 @@ class SongsController < ApplicationController
 
   def show
     @song = Song.find(params[:id])
+    @artist = Artist.find(:artist_id)
   end
 
   # def create
@@ -34,10 +37,12 @@ class SongsController < ApplicationController
   end
 
   def destroy
-    @artist = artist_path(params[:id])
-    @song = Song.find(params[:id])
     @song.destroy
-    redirect_to request.env["HTTP_REFERER"]
+
+    respond_to do |format|
+      format.html { redirect_to request.env["HTTP_REFERER"], notice: 'song was successfully deleted.' }
+      format.json { head :no_content }
+    end
   end
 
   private
@@ -45,6 +50,10 @@ class SongsController < ApplicationController
   def song_params
     params
       .require(:song)
-      .permit(:name, :artist, :artist_name)
+      .permit(:name, :artist_id)
+  end
+
+  def set_song
+    @song = Song.find(params[:id])
   end
 end

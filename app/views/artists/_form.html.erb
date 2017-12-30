@@ -1,23 +1,6 @@
-<!-- <%= form_for [@artist, @artist.songs.new], remote: true do |f| %>
-  <div class="field">
-
-    <div class="form-group">
-      <%= f.text_field :name, placeholder: "Name of the song you'd like to add", style: "width: 90%; height: 35px; background-color: rgb(42, 42, 42)"; %>
-      <%= f.submit "Add", class: "btn btn-success" %>
-    </div>
-
-    <ul>
-      <% @artist.errors.full_messages.each do |msg| %>
-        <p class="alert alert-danger"><%= msg %></p>
-      <% end %>
-    </ul>
-
-  </div>
-<% end %> -->
-
 <%= form_for [@artist, @artist.songs.new] do |f| %>
   <div class="form-group <%= @artist.errors.any? ? 'has-error' : '' %>" id="formgroup-title">
-    <%= f.text_field :name, placeholder: "What needs to be done?", class: 'form-control', id: 'new-song' %>
+    <%= f.text_field :name, placeholder: "Add song?", class: 'form-control', id: 'new-song' %>
 
     <% if @artist.errors.any? %>
       <% song.errors.full_messages.each do |message| %>
