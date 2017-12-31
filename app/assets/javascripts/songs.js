@@ -42,7 +42,7 @@ function deleteSong(songId) {
     dataType: "json"})
 
   .done(function(data) {
-    console.log(data);
+    console.log( 'Song ' + songId + ' deleted');
   })
 }
 
@@ -58,8 +58,8 @@ function deleteAllSongs(event) {
   $.each($(".song-id"), function(index, song) {
     $song = $(song);
     songId = $(song).data('id');
-    deleteSong(songId);
     $song.remove();
+    deleteSong(songId);
   });
 }
 
