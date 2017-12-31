@@ -1,26 +1,19 @@
 <hr class="featurette-divider">
 <div class="jumbotron">
-
-
   <% @artist.photos.each do |photo| %>
-    <div class="img-show">
-      <img class="img-circle" src="<%=photo.image.thumbnail_show%>" alt="Generic placeholder image" width="300" height="300">
-    </div>
+  <div class="img-show">
+    <img class="img-circle" src="<%=photo.image.thumbnail_show%>" alt="Generic placeholder image" width="300" height="300">
+  </div>
   <% end %>
-
   <h1 class="display-3"><%= @artist.name %></h1>
   <h4 id="artist-id" data-id="<%= @artist.id %>"</h4>
   <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-    <ul class="list-group">
-
-
-          <table class="table" id="songList">
-            <%= render @songs %>
-          </table>
-          <%= render "form", song: @songs %>
-        </div>
-      </div>
-      <hr>
-      <%= link_to "Delete all", artist_song_url(@artist, @songs ), class: "delete-all", remote: true %></label>
-    </ul>
+  <ul class="list-group">
+    <table class="table" id="songList">
+      <%= render @songs %>
+    </table>
+    <%= render "form", song: @songs %>
+    <hr>
+    <%= button_to "Delete all", artist_song_url(@artist, @songs ), class: "delete-all btn btn-danger", remote: true %></label>
+  </ul>
 </div>
