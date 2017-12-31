@@ -21,6 +21,6 @@
         </div>
       </div>
       <hr>
-      <%= link_to 'Delete artist', artist_path, class: "btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %>
+      <%= link_to "Delete all", artist_song_url(@artist, @songs ), class: "delete-all", remote: true %></label>
     </ul>
 </div>

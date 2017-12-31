@@ -22,7 +22,6 @@ function createSong(name) {
     var tableRow = $('<tr class="song"></tr>')
       .append($('<td>').append(label));
     $("#songList").append(tableRow);
-    $(".destroy-song").append("");
   })
 
   .fail(function(error) {
@@ -43,13 +42,25 @@ function deleteSong(songId) {
     dataType: "json"})
 
   .done(function(data) {
+    console.log(data);
   })
 }
 
 function submitDelete(event) {
+  event.preventDefault();
   songId = $(this).parent().data('id')
   $(this).parent().remove()
   deleteSong(songId);
+}
+
+function deleteAllSongs(event) {
+  event.preventDefault();
+  $.each($(".song-id"), function(index, song) {
+    $song = $(song);
+    songId = $(song).data('id');
+    deleteSong(songId);
+    $song.remove();
+  });
 }
 
 function submitSong(event) {
@@ -62,5 +73,5 @@ function submitSong(event) {
 $(document).ready(function() {
   $("form").bind('submit', submitSong);
   $(".destroy-song").on('click', submitDelete);
-
+  $(".delete-all").on('click', deleteAllSongs);
 });
