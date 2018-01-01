@@ -1,7 +1,6 @@
 <%= form_for [@artist, @artist.songs.new] do |f| %>
   <div class="form-group <%= @artist.errors.any? ? 'has-error' : '' %>" id="formgroup-title">
     <%= f.text_field :name, placeholder: "Add song?", class: 'form-control', id: 'new-song' %>
-
     <% if @artist.errors.any? %>
       <% song.errors.full_messages.each do |message| %>
         <span class="help-block"><%= message %></span>
