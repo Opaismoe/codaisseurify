@@ -57,11 +57,15 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  # Capybara rails, for testing
+  gem 'capybara', '~> 2.9', '>= 2.9.1'
+  # Testing suite
+  gem 'selenium-webdriver'
+  gem "chromedriver-helper"
 end
 
 group :test do
-  # Capybara rails, for testing
-  gem 'capybara', '~> 2.9', '>= 2.9.1'
+  gem 'database_cleaner'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
