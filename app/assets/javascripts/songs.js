@@ -16,11 +16,10 @@ function createSong(name) {
   })
   .done(function(data) {
     console.log(data);
-    data.id;
     var label = $('<label></label>')
       .html(name);
     var tableRow = $('<tr class="song"></tr>')
-      .append($('<td>').append(label));
+      .append($('<tr>').append(label));
     $("#songList").append(tableRow);
   })
 
@@ -29,6 +28,15 @@ function createSong(name) {
     error_message = error.responseJSON.name[0];
     showError(error_message);
   });
+}
+
+function showError(message) {
+  $("#songList").addClass("error");
+  var errorElement = $("<small></small>")
+    .attr("id", "error_message")
+    .addClass("error")
+    .html(message);
+  $(errorElement).appendTo('form .field');
 }
 
 function deleteSong(songId) {
