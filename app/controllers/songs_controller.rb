@@ -18,10 +18,10 @@ class SongsController < ApplicationController
 
     respond_to do |format|
      if @song.save
-       format.html { redirect_to request.env["HTTP_REFERER"], notice: 'Song was added.' }
+       # format.html { redirect_to request.env["HTTP_REFERER"], notice: 'Song was added.' }
        format.json { render :show, status: :created, location: @songs }
      else
-       format.html { redirect_to request.env["HTTP_REFERER"] }
+       # format.html { redirect_to request.env["HTTP_REFERER"] }
        format.json { render json: @song.errors, status: :unprocessable_entity }
      end
     end
