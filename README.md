@@ -43,7 +43,7 @@ Make sure you have [Ruby](https://www.ruby-lang.org/en/) and [Bundler](http://bu
 
 ```bash
 git clone git@github.com:Opaismoe/codaisseurify.git
-cd Codaisseurup
+cd Codaisseurify
 bundle install
 rails db:create db:migrate db:seed
 rails server
